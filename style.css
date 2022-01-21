@@ -1,0 +1,51 @@
+body {
+  background: url(https://cdn.glitch.com/0d36063b-8b4b-4154-9026-9eb380b8cf5d%2F2w7FxK.jpg?v=15727057886429);
+
+}
+
+h1 {
+  background: url(https://cdn.glitch.com/0d36063b-8b4b-4154-9026-9eb380b8cf5d%2FWhite_Modern_Background.jpg?v=1572794686543);
+  height: 100%;
+  background-position: center;
+  background-size: 1600px 300px;
+  object-fit: cover;
+  font-family: "Josefin Sans", serif;
+  color: black;
+  text-align: center;
+  padding: 50px;
+  font-weight: bold;
+  font-size: 60px;
+}
+
+h2 {
+  margin: auto;
+  font-family: "Raleway", serif;
+  font-size: 30px;
+  text-align: center;
+  padding: 20px;
+  font-weight: bold;
+  color: darkblue;
+}
+
+.text {
+  margin: auto;
+  font-family: "Raleway", serif;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left:180px;
+  padding-right:180px;
+}
+
+.img {
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+}
+
+.gif {
+  object-fit: cover;
+  width: 250px;
+  height: 250px;
+}
