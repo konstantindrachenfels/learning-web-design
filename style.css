@@ -1,0 +1,56 @@
+body {
+  background: url(https://cdn.glitch.com/9c6bc951-1ab2-4d98-b30b-ee256e75124b%2Fvintage-white-wood-background-old-weathered-wooden-plank-painted-white-color_1484-1806.jpg?v=1571849662738);
+
+}
+#header {
+  background: url(https://cdn.glitch.com/9c6bc951-1ab2-4d98-b30b-ee256e75124b%2Fmaxresdefault.jpg?v=1571839796538);
+  color: white;
+  text-align: center;
+  padding: 40px;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+h1 {
+  margin: auto;
+  font-family: "Bitter", serif;
+  font-size: 70px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+h3 {
+  margin: auto;
+  font-family: "Indie Flower", cursive;
+  font-size: 20px;
+  text-align: center;
+}
+h2 {
+  line-height: 32px;
+  padding: 70px;
+  margin: auto;
+  font-family: "Bitter", serif;
+  font-size: 50px;
+  text-align: center;
+}
+p {
+  margin: auto;
+  font-family: "Indie Flower", serif;
+  font-size: 30px;
+  text-align: left;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  min-height: 20px;
+  margin-bottom: 15px;
+  content-right: 50px;
+}
+.lesson {
+  margin: auto;
+  font-family: "Indie Flower", cursive;
+  font-size: 30px;
+  text-align: center;
+  padding-bottom: 40px;
+  color: darkblue;
+}
