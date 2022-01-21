@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Image Classfier</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+       rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Raleway||Josefin+Sans&display=swap"
+    />
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+    />
+    <link rel="stylesheet" href="/style.css" />
+
+    
+  </head>
+  <body>
+    <h1>Create your personalised image classifier</h1>
+
+    <h2>
+      You are sick of the convolutional neural networks (CNN) out there?
+    </h2>
+    <p class="text">
+      Wait, you are probably asking yourself now: "What the heck is a
+      convolutional neural network?". Well, the CNNs are the tools you use to
+      automatically analyze, classify and label images. If you wanna look at a
+      more in-depth definition
+      <a
+        target="_blank"
+        href="https://en.wikipedia.org/wiki/Convolutional_neural_network"
+      >
+        click here</a
+      >! So, CNNs are a pretty great thing. They make the benefits of machine
+      learning in the area of image recognition useable for everyone. In fact,
+      there are some out there, like
+      <a
+        target="_blank"
+        href="https://mc.ai/mobilenet-the-whos-who-of-faster-cnn-classifier"
+      >
+        MobileNet</a
+      >
+      , who are really fast and easy to use. If you rather want more
+      sophisticated outputs and are thus willing to use a larger, slower and
+      more complex CNNs you might want to have a look at some other solutions
+      like
+      <a target="_blank" href="https://ai.google/research/pubs/pub43022">
+        GoogLeNet</a
+      >.
+    </p>
+
+    <h2>
+      So, why should you be sick of them if they are so great???
+    </h2>
+    <p class="text">
+      Well, once you take a closer look you will find out that these CNNs are
+      only as good as the image libraries they use. Let us take the userfriendly
+      MobileNet for example. MobileNet uses the images from
+      <a target="_blank" href="http://www.image-net.org/"> ImageNet</a>
+      to train it's algorithm. This is great as ImageNet includes more than
+      <strong> 14 million </strong> images! Nonetheless, ImageNet is not a
+      professional database designed to represent everything there is. This
+      means that it includes a lot of pictures of Chihuahuas as they are cute
+      and adorable and hence you will have a high likelihood of MobileNet to
+      correctly recognize Chihuahuas. If you rather want MobileNet to recognize
+      something rare and special like a
+      <a target="_blank" href="https://en.wikipedia.org/wiki/Quokka"> Quokka</a>
+      , it will not be able to recognize these adorable creatures as it has not
+      been trained to do so. This is so as there has not been created a category
+      for Quokkas in ImageNet. There exist a little more than
+      <strong> 20.000 </strong> categories in ImageNet. Humans are for example
+      also not categorized. Thus, MobileNet will not be able to recognize you or
+      any other person.
+    </p>
+
+       <p class = "img">
+    <img class="gif" src="https://cdn.glitch.com/0d36063b-8b4b-4154-9026-9eb380b8cf5d%2Fgiphy%20(2).gif?v=1572707076351" >
+    </p>
+    
+    <h2>
+      Train MobileNet to recognize something unique!
+    </h2>
+   <p class="text">
+    You might be looking into this whole image recognition area because you want
+    the CNN to recognize something special like your friends, favorite stuffed
+    animals or whatsoever. If that wasn't the reason that you looked into CNNs,
+    well then you might be pumped to try this out now! But how do you do that?
+    There has been offered a really easy and user friendly way to do so using
+    <a target="_blank" href="https://ml5js.org/"> ml5</a>. So ml5 is this
+    awesome open source library developed by NYU professors and many more
+    developers from all over the world. I really strongly encourage you to check
+    out their website. The best way to figre out what you all can do with ml5 is
+    to browse through the examples on the website or to check out the
+    <a
+      target="_blank"
+      href="https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw"
+    >
+      youtube tutorials</a
+    >
+    from one of the developers,
+    <a target="_blank" href="https://en.wikipedia.org/wiki/Daniel_Shiffman">
+      Daniel Shiffman</a
+    >.
+    </p>
+    
+        <p class = "img">
+    <img class="gif" src="https://cdn.glitch.com/0d36063b-8b4b-4154-9026-9eb380b8cf5d%2Fgiphy%20(3).gif?v=1572708157736" >
+    </p>
+    
+    <h2>
+      How to code the training process
+    </h2>
+    <p class="text">
+      So, let's get to the coding! As i said, we will be using ml5. Hence, the
+      first step is to make a reference to their library in our html.
+    </p>
+    <p class="img">
+      <img
+        src="https://cdn.glitch.com/0d36063b-8b4b-4154-9026-9eb380b8cf5d%2FReference.JPG?v=1572691603884"
+      />
+    </p>
+    <p class="text">
+      The current version of ml5, when I wrote this article, is this version
+      0.4.1. This might not be the case when you are reading the article. Hence,
+      you should check out their website and make sure that you reference to the
+      newest version.
+    </p>
+
+    <p class="text">
+      Once we have created the link, the first step is to extract the already
+      existing features in MobileNet and to create a new classifier using these
+      features.
+    </p>
+    <p class="img">
+      <img
+        src="https://cdn.glitch.com/0d36063b-8b4b-4154-9026-9eb380b8cf5d%2FExtractor.JPG?v=1572694844278"
+      />
+    </p>
+    <p class="text">
+      This is quite easy as ml5 has created these predefined functions
+      "featureExtractor" and "classification". Now, as you can see in this
+      example we are reffering to the variable "video". This is so as I will
+      show you how to create new classes from pictures you will take with your
+      webcam. This is the most convenient way to create unique classes with
+      stuff only you have.
+    </p>
+    <p class="text">
+      Hence, we need to define the variable "video" now.
+    </p>
+    <p class="img">
+      <img
+        src="https://cdn.glitch.com/0d36063b-8b4b-4154-9026-9eb380b8cf5d%2FVideo.JPG?v=1572695176848"
+      />
+    </p>
+    <p class="text">
+      Now your webcam should be streaming a video of you on your website.
+    </p>
+    <p class="text">
+      As your website now needs to load the whole MobileNet library and the
+      video you ask some performance from your laptop, even if MobileNet is
+      already a pretty light CNN. Hence, Daniel Shiffman comes up with the
+      suggestion to create functions which tell you when MobileNet and video are
+      loaded and ready. As I think this is pretty useful, I suggest you to do
+      the same using the following functions.
+    </p>
+    <p class="img">
+      <img
+        src="https://cdn.glitch.com/0d36063b-8b4b-4154-9026-9eb380b8cf5d%2Fready.JPG?v=1572695580144"
+      />
+    </p>
+
+    <p class="text">
+      Now, that you've defined that you want to create a new class, you have to
+      make some pictures to feed MobileNet with examples. That way MobileNet is
+      able to train itself with your examples in the next step. As we have
+      already set up the video, we now need to create a button and define that a
+      picture is taken once the button is pressed. In our example I defined the
+      classes we want to add as "brother" and "sister" so that you could get
+      MobileNet on your website to recognize your siblings whenever they look
+      into the camera. As I have said before, you can define virtually every
+      class you like and combine it with any picture you like. You could also
+      make pcitures of apples and define the class as banana so that MobileNet
+      will recognize the apple as banana if that is what you feel like. 😉
+    </p>
+    <p class="img">
+      <img
+        src="https://cdn.glitch.com/0d36063b-8b4b-4154-9026-9eb380b8cf5d%2Fdefineclass.JPG?v=1572696482300"
+      />
+    </p>
+    <p class="text">
+      As you can see, i've also defined a variable which keeps track of the
+      number of pictures that you are taking. That is useful since the number of
+      pictures you will be taking upfront will define how accurate MobileNet
+      will be to recognize your class. So, make sure that you take the pictures
+      out of different angles too!
+    </p>
+
+    <p class="text">
+      The next step is to train MobileNet with the pictures we have just taken.
+      Luckily, ml5 has the predefined functions "train" and "loss" which make
+      this step incredibly easy for us.
+    </p>
+
+    <p class="img">
+      <img
+        src="https://cdn.glitch.com/0d36063b-8b4b-4154-9026-9eb380b8cf5d%2FTraining.JPG?v=1572697244787"
+      />
+    </p>
+
+    <p class="text">
+      "Loss", if you are wondering, keeps track how often the CNN labels our
+      image wrong. Hence, we want to make sure that this percentage gets reduced
+      to a number really close to zero in the training process.
+    </p>
+
+    <p class="text">
+      Now our images are trained and classified! Hence, we want to check out if
+      it worked.
+    </p>
+    <p class="img">
+    <img
+      src="https://cdn.glitch.com/0d36063b-8b4b-4154-9026-9eb380b8cf5d%2FTryout.JPG?v=1572697531156"
+    />
+    </p>
+    <p class="text">
+      These last functions create the image classifier. Now, you can see if your
+      classifier is able to recognize your new classes and to what probability.
+      So I suggest you have fun and try your classifier!
+    </p>
+    
+        <p class = "img">
+    <img class="gif" src="https://cdn.glitch.com/0d36063b-8b4b-4154-9026-9eb380b8cf5d%2Fgiphy%20(4).gif?v=1572708250696" >
+    </p>
+    
+    <p class="text">
+      In case you are not sure how the accompanied html text should look like.
+      Here you have an example of a very basic setup.
+    </p>
+    <p class="img">
+    <img
+      src="https://cdn.glitch.com/0d36063b-8b4b-4154-9026-9eb380b8cf5d%2Fhtml.JPG?v=1572697904659"
+    />
+    </p>
+    <p class = "text">
+      I hope you enjoyed the explanation and succeded to create your own image
+      classificator! You should really check out the website of ml5 and the youtube channel
+      from Daniel Shiffman if this caught your interest!
+    </p>
+    
+    <p class="img">
+    <img class = "gif" src="https://cdn.glitch.com/0d36063b-8b4b-4154-9026-9eb380b8cf5d%2Fgiphy%20(1).gif?v=1572706979041" >
+    </p>
+      
+  <script src="/script.js" defer></script>
+  </body>
+</html>
