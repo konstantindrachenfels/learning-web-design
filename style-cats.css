@@ -1,0 +1,12 @@
+#cats {
+  display: flex;
+}
+#catstale {
+ flex: 0 0 50%;
+}
+#catsimage {
+  flex: 1;
+}
+#clear {
+  clear: both;
+}
